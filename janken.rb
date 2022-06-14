@@ -11,12 +11,14 @@ while true do
     return true
 
   elsif (user_hand == computer_hand)
+    puts "------------------"
     puts "あなた：#{jankens[user_hand]}を出しました"
     puts "相手：#{jankens[computer_hand]}を出しました"
     puts "------------------"
     puts "あいこで..."
 
   elsif (user_hand == 0 && computer_hand == 1)||(user_hand == 1 && computer_hand == 2)||(user_hand == 2 && computer_hand == 0)
+    puts "------------------"
     puts "あなた：#{jankens[user_hand]}を出しました"
     puts "相手：#{jankens[computer_hand]}を出しました"
     puts "------------------"
@@ -26,12 +28,23 @@ while true do
     computer_direction = rand(3)
     acchimuite = ["上","下","左","右"]
     puts "ポイ！"
-    puts "あなた：#{acchimuite[user_direction]}"
-    puts "相手：#{acchimuite[computer_direction]}"
-    puts "------------------"
-    puts "じゃんけん..."
+    if user_direction == computer_direction
+      puts "------------------"
+      puts "あなた：#{acchimuite[user_direction]}"
+      puts "相手：#{acchimuite[computer_direction]}"
+      puts "------------------"
+      puts "あなたの勝ちです！(ゲーム終了)"
+      return true
+    else
+      puts "------------------"
+      puts "あなた：#{acchimuite[user_direction]}"
+      puts "相手：#{acchimuite[computer_direction]}"
+      puts "------------------"
+      puts "残念！"
+    end
 
   else
+    puts "------------------"
     puts "あなた：#{jankens[user_hand]}を出しました"
     puts "相手：#{jankens[computer_hand]}を出しました"
     puts "------------------"
@@ -41,9 +54,19 @@ while true do
     computer_direction = rand(3)
     acchimuite = ["上","下","左","右"]
     puts "ポイ！"
-    puts "あなた：#{acchimuite[user_direction]}"
-    puts "相手：#{acchimuite[computer_direction]}"
-    puts "------------------"
-    puts "じゃんけん..."
+    if user_direction == computer_direction
+      puts "------------------"
+      puts "あなた：#{acchimuite[user_direction]}"
+      puts "相手：#{acchimuite[computer_direction]}"
+      puts "------------------"
+      puts "あなたの負けです。(ゲーム終了)"
+      return true
+    else
+      puts "------------------"
+      puts "あなた：#{acchimuite[user_direction]}"
+      puts "相手：#{acchimuite[computer_direction]}"
+      puts "------------------"
+      puts "さぁもう一度！"
+    end
   end
 end
